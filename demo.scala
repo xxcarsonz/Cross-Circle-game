@@ -14,9 +14,8 @@ object TicTacToe {
 			"""[ ][ ][ ]
 				|[ ][ ][ ]
 				|[ ][ ][ ]""".stripMargin)
-		val array = checkerboard.toArray
 		val indices = mutable.Buffer[Int]()
-		array.indices.reverse.foreach(index => if (array(index) == ' ') indices.+=:(index))
+		checkerboard.indices.reverse.foreach(index => if (checkerboard(index) == ' ') indices.+=:(index))
 		val map = new mutable.HashMap[Int, Int]
 		(1 to 9).foreach(number => map(number) = indices(number - 1))
 		var input = ""
